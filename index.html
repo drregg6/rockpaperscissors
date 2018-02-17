@@ -9,9 +9,19 @@
         
         <script>
         
+            var options = ['Rock', 'Paper', 'Scissors'];
+            var playPlay = prompt('Choose an option');
+            
             function computerPlay(){
-                
+                var compPlay = Math.floor(Math.random() * 3);
+                return options[compPlay];
             }
+            
+            function play(computerPlay, playPlay) {
+                return computerPlay;
+            }
+            
+            console.log(play());
         
         </script>
         
