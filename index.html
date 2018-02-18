@@ -14,14 +14,26 @@
             var options = ['rock', 'paper', 'scissors'];
 //            var playPlay = prompt('Choose an option');
             
+            
+            
             function getPlayerChoice(){
                 var choice = prompt('Choose an option!').toLowerCase();
                 
-                if (choice !== 'rock') {
-                    choice = prompt('Please select "rock," "paper", or "scissors"!');
-                } else {
-                    console.log(choice);
+                switch (choice){
+                    case 'rock':
+                        console.log('You chose "rock"');
+                        break;
+                    case 'scissors':
+                        console.log('You chose "scissors"');
+                        break;
+                    case 'paper':
+                        console.log('You chose "paper"');
+                        break;
+                    default:
+                        getPlayerChoice();
                 }
+                
+                return choice;
                 
             }
             
