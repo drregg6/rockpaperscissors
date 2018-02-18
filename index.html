@@ -8,12 +8,11 @@
     <body>
         
         <script>
-        
-            window.onload = getPlayerChoice();
             
             var options = ['rock', 'paper', 'scissors'];
-//            var playPlay = prompt('Choose an option');
-            
+        
+            window.onload = getPlayerChoice();
+            window.onload = getComputerChoice();
             
             
             function getPlayerChoice(){
@@ -37,22 +36,15 @@
                 
             }
             
-            function computerPlay(){
-                var compPlay = Math.floor(Math.random() * 3);
-                return options[compPlay];
+            function getComputerChoice(){
+                var randNum = Math.floor(Math.random() * 3);
+                var compChoice = options[randNum];
+                console.log(compChoice);
+                
+                return compChoice;
             }
             
-//            function play(playPlay) {
-//                
-//                var computer = computerPlay();
-//                if (playPlay === computer) {
-//                    console.log('Draw');
-//                } else if ()
-//                
-//                return computerPlay();
-//            }
             
-//            console.log(play());
         
         </script>
         
