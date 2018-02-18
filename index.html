@@ -9,19 +9,38 @@
         
         <script>
         
-            var options = ['Rock', 'Paper', 'Scissors'];
-            var playPlay = prompt('Choose an option');
+            window.onload = getPlayerChoice();
+            
+            var options = ['rock', 'paper', 'scissors'];
+//            var playPlay = prompt('Choose an option');
+            
+            function getPlayerChoice(){
+                var choice = prompt('Choose an option!').toLowerCase();
+                
+                if (choice !== 'rock') {
+                    choice = prompt('Please select "rock," "paper", or "scissors"!');
+                } else {
+                    console.log(choice);
+                }
+                
+            }
             
             function computerPlay(){
                 var compPlay = Math.floor(Math.random() * 3);
                 return options[compPlay];
             }
             
-            function play(computerPlay, playPlay) {
-                return computerPlay;
-            }
+//            function play(playPlay) {
+//                
+//                var computer = computerPlay();
+//                if (playPlay === computer) {
+//                    console.log('Draw');
+//                } else if ()
+//                
+//                return computerPlay();
+//            }
             
-            console.log(play());
+//            console.log(play());
         
         </script>
         
