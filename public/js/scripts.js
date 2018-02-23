@@ -10,7 +10,7 @@ select.addEventListener('input', function(ev) {
     // getElText(select);
     
     // need to find a way to change on state change, not just on input select
-    // 
+    // console.log(ev.target);
 });
 button.addEventListener('click', playGame);
 
