@@ -2,16 +2,18 @@ var select = document.querySelector('select');
 var button = document.querySelector('button');
 
 var options = ['rock', 'paper', 'scissors'];
-        
+
 //            window.onload = getPlayerChoice();
 //            window.onload = getComputerChoice();
-select.addEventListener('input', playGame);
+//select.addEventListener('input', function(ev) {
+//    
+//});
 button.addEventListener('click', playGame);
-            
-function getPlayerChoice(){
+
+function getPlayerChoice() {
     var choice = prompt('Choose an option!').toLowerCase();
 
-    switch (choice){
+    switch (choice) {
         case 'rock':
             return 'rock';
             console.log('You chose "rock"');
@@ -32,10 +34,10 @@ function getPlayerChoice(){
 
 }
 
-function getComputerChoice(){
+function getComputerChoice() {
     var randNum = Math.floor(Math.random() * 3);
     var compChoice = options[randNum];
-//                console.log(compChoice);
+    //                console.log(compChoice);
 
     return compChoice;
 }
@@ -43,32 +45,35 @@ function getComputerChoice(){
 // TODO: condense playGame func
 // TODO: do something instead of console.logging
 
-function playGame(){
+function playGame() {
     var player = getPlayerChoice();
     var computer = getComputerChoice();
 
-    console.log({player, computer});
+    console.log({
+        player,
+        computer
+    });
 
-    if (player === 'rock'){
-        if (computer === 'rock'){
+    if (player === 'rock') {
+        if (computer === 'rock') {
             console.log('Tie game!');
-        } else if (computer === 'paper'){
+        } else if (computer === 'paper') {
             console.log('Computer wins...');
         } else {
             console.log('Congratulations, you win!');
         }
-    } else if (player === 'paper'){
-        if (computer === 'paper'){
+    } else if (player === 'paper') {
+        if (computer === 'paper') {
             console.log('Tie game!');
-        } else if (computer === 'scissors'){
+        } else if (computer === 'scissors') {
             console.log('Computer wins...');
         } else {
             console.log('Congratulations, you win!');
         }
     } else {
-        if (computer === 'scissors'){
+        if (computer === 'scissors') {
             console.log('Tie game!');
-        } else if (computer === 'rock'){
+        } else if (computer === 'rock') {
             console.log('Computer wins...');
         } else {
             console.log('Congratulations, you win!');
