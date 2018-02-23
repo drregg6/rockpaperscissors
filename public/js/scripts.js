@@ -5,9 +5,13 @@ var options = ['rock', 'paper', 'scissors'];
 
 //            window.onload = getPlayerChoice();
 //            window.onload = getComputerChoice();
-//select.addEventListener('input', function(ev) {
-//    
-//});
+select.addEventListener('input', function(ev) {
+    // doesn't change on state change
+    // getElText(select);
+    
+    // need to find a way to change on state change, not just on input select
+    // 
+});
 button.addEventListener('click', playGame);
 
 function getPlayerChoice() {
@@ -82,3 +86,14 @@ function playGame() {
 }
 
 // TODO: create game(), a function to play 5 rounds and keeps track of the scores
+
+function getElText(element) {
+    var elt = document.querySelector('select');
+
+    if (elt.selectedIndex == -1)
+        return null;
+
+    return elt.options[elt.selectedIndex].text;
+}
+
+console.log(getElText(select));
