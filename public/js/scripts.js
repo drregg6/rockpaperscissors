@@ -1,13 +1,13 @@
+var options = ['rock', 'paper', 'scissors'];
+
 var select = document.querySelector('select');
 var playBtn = document.querySelector('.play-btn');
 var resetBtn = document.querySelector('.reset-btn');
-var pEls = document.querySelectorAll('p');
+var playerScore = parseInt(document.querySelector('.player-score').textContent);
+var computerScore = parseInt(document.querySelector('.computer-score').textContent);
 
-var playerScore = 0;
-var computerScore = 0;
-
-var options = ['rock', 'paper', 'scissors'];
-
+var computerChoice = 'rock';
+var playerChoice = 'rock';
 
 
 // change player's choice on selection
@@ -46,8 +46,7 @@ function getPlayerChoice() {
 
 function getComputerChoice() {
     var randNum = Math.floor(Math.random() * 3);
-    var compChoice = options[randNum];
-    return compChoice;
+    computerChoice = options[randNum];
 }
 
 // TODO: condense playGame func
@@ -90,6 +89,7 @@ function playGame() {
 }
 
 // TODO: create game(), a function to play 5 rounds and keeps track of the scores
+
 
 //function getElText(element) {
 //    var elt = document.querySelector('select');
