@@ -2,18 +2,19 @@
 
 *, *:before, *:after {
     box-sizing: border-box;
-    
-/*    border: 1px solid red;*/
 }
 
 body {
     font-size: 16px;
     font-family: 'Lato', sans-serif, Helvetica;
     
+/*
     display: flex;
     justify-content: center;
+*/
 }
 
+/*
 section {
     width: 50%;
     
@@ -39,6 +40,36 @@ section > button {
     text-align: center;
     font-size: 4em;
 }
+*/
+
+section {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.player,
+.computer {
+    display: inline-block;
+    width: 125px;
+}
+
+.player {
+    margin-right: 25px;
+}
+.computer {
+    margin-left: 25px;
+}
+
+.player p,
+.computer p {
+    font-size: 3.5em;
+    border: 2px solid black;
+}
+
+.select {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 button,
 select {
@@ -48,7 +79,7 @@ select {
 }
 
 select {
-    padding: 9px 25px;
+    padding: 8.5px 25px;
 }
 
 button.reset-btn,

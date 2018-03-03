@@ -47,8 +47,6 @@ function getPlayerChoice() {
 function getComputerChoice() {
     var randNum = Math.floor(Math.random() * 3);
     var compChoice = options[randNum];
-    //                console.log(compChoice);
-
     return compChoice;
 }
 
