@@ -38,6 +38,9 @@ function getComputerChoice() {
 }
 
 function resetGame() {
+    playBtn.disabled = false;
+    playBtn.setAttribute('opacity', '1');
+    
     header.textContent = 'Rock, Paper, Scissors';
     playerScore = 0;
     computerScore = 0;
@@ -51,14 +54,26 @@ function resetGame() {
 function playGame() {
     computerChoice = getComputerChoice();
     var winner = getResult(computerChoice, playerChoice);
+    
+    if (computerScore === 5) {
+        computerText.textContent = computerScore;
+        header.textContent = 'Computer Wins -- Game Over!';
+        playBtn.disabled = true;
+        playBtn.setAttribute('opacity', '0.1');
+    } else if (playerScore === 5) {
+        playerText.textContent = playerScore;
+        header.textContent = 'You Win! Congratulations!';
+        playBtn.disabled = true;
+        playBtn.setAttribute('opacity', '0.1');
+    } else {
+        updateScore(winner);
+    }
 
     console.log({
         playerChoice,
         computerChoice,
         winner
     });
-    
-    updateScore(winner);
 }
 
 function getResult(comp, player) {
@@ -68,24 +83,30 @@ function getResult(comp, player) {
         if (comp === 'rock') {
             result = 'tie';
         } else if (comp === 'paper') {
+            computerScore++;
             result = 'computer';
         } else {
+            playerScore++;
             result = 'player';
         }
     } else if (player === 'paper') {
         if (comp === 'paper') {
             result = 'tie';
         } else if (comp === 'scissors') {
+            computerScore++;
             result = 'computer';
         } else {
+            playerScore++;
             result = 'player';
         }
     } else {
         if (comp === 'scissors') {
             result = 'tie';
         } else if (computer === 'rock') {
+            computerScore++;
             result = 'computer';
         } else {
+            playerScore++;
             result = 'player';
         }
     }
@@ -95,12 +116,12 @@ function getResult(comp, player) {
 
 function updateScore(winner) {
     if (winner === 'computer') {
-        computerScore++;
         computerText.textContent = computerScore;
+        // somehow add 'playerChoice' loses against 'computerChoice'
         header.textContent = 'Computer Wins';
     } else if (winner === 'player') {
-        playerScore++;
         playerText.textContent = playerScore;
+        // somehow add 'playerChoice' beats 'computerChoice'
         header.textContent = 'Player Wins!';
     } else {
         header.textContent = 'Tie game';
