@@ -1,13 +1,16 @@
-var options = ['rock', 'paper', 'scissors'];
+// content that remains constant
+const options = ['rock', 'paper', 'scissors'];
+// content that will get eventlisteners
+const select = document.querySelector('select');
+const playBtn = document.querySelector('.play-btn');
+const resetBtn = document.querySelector('.reset-btn');
+// content that will be updated
+let playerScore = parseInt(document.querySelector('.player-score').textContent);
+let computerScore = parseInt(document.querySelector('.computer-score').textContent);
 
-var select = document.querySelector('select');
-var playBtn = document.querySelector('.play-btn');
-var resetBtn = document.querySelector('.reset-btn');
-var playerScore = parseInt(document.querySelector('.player-score').textContent);
-var computerScore = parseInt(document.querySelector('.computer-score').textContent);
 
-var computer = 'rock';
-var player = select.options[select.selectedIndex].textContent.toLowerCase();
+let computer = 'rock';
+let player = select.options[select.selectedIndex].textContent.toLowerCase();
 
 
 // change player's choice on selection
