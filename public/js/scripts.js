@@ -1,18 +1,24 @@
 var select = document.querySelector('select');
-var button = document.querySelector('button');
+var playBtn = document.querySelector('.play-btn');
+var resetBtn = document.querySelector('.reset-btn');
+
+var playerScore = 0;
+var computerScore = 0;
 
 var options = ['rock', 'paper', 'scissors'];
 
-//            window.onload = getPlayerChoice();
-//            window.onload = getComputerChoice();
-select.addEventListener('input', function(ev) {
-    // doesn't change on state change
-    // getElText(select);
-    
-    // need to find a way to change on state change, not just on input select
-    // console.log(ev.target);
-});
-button.addEventListener('click', playGame);
+
+
+// change player's choice on selection
+select.addEventListener('input', playerChoice);
+
+// play game on button click
+playBtn.addEventListener('click', playGame);
+
+// reset game on button click
+resetBtn.addEventListener('click', resetGame);
+
+
 
 function getPlayerChoice() {
     var choice = prompt('Choose an option!').toLowerCase();
@@ -87,13 +93,13 @@ function playGame() {
 
 // TODO: create game(), a function to play 5 rounds and keeps track of the scores
 
-function getElText(element) {
-    var elt = document.querySelector('select');
-
-    if (elt.selectedIndex == -1)
-        return null;
-
-    return elt.options[elt.selectedIndex].text;
-}
-
-console.log(getElText(select));
+//function getElText(element) {
+//    var elt = document.querySelector('select');
+//
+//    if (elt.selectedIndex == -1)
+//        return null;
+//
+//    return elt.options[elt.selectedIndex].text;
+//}
+//
+//console.log(getElText(select));
