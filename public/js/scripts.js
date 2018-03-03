@@ -7,11 +7,11 @@ var playerScore = parseInt(document.querySelector('.player-score').textContent);
 var computerScore = parseInt(document.querySelector('.computer-score').textContent);
 
 var computerChoice = 'rock';
-var playerChoice = 'rock';
+var playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
 
 
 // change player's choice on selection
-//select.addEventListener('input', playerChoice);
+select.addEventListener('input', getPlayerChoice);
 
 // play game on button click
 //playBtn.addEventListener('click', playGame);
@@ -21,27 +21,27 @@ var playerChoice = 'rock';
 
 
 function getPlayerChoice() {
-    var choice = prompt('Choose an option!').toLowerCase();
-
-    switch (choice) {
-        case 'rock':
-            return 'rock';
-            console.log('You chose "rock"');
-            break;
-        case 'scissors':
-            return 'scissors';
-            console.log('You chose "scissors"');
-            break;
-        case 'paper':
-            return 'paper';
-            console.log('You chose "paper"');
-            break;
-        default:
-            getPlayerChoice();
-    }
-
-    return choice;
-
+//    var choice = prompt('Choose an option!').toLowerCase();
+//
+//    switch (choice) {
+//        case 'rock':
+//            return 'rock';
+//            console.log('You chose "rock"');
+//            break;
+//        case 'scissors':
+//            return 'scissors';
+//            console.log('You chose "scissors"');
+//            break;
+//        case 'paper':
+//            return 'paper';
+//            console.log('You chose "paper"');
+//            break;
+//        default:
+//            getPlayerChoice();
+//    }
+//
+//    return choice;
+    playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
 }
 
 function getComputerChoice() {
