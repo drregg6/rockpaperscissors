@@ -5,8 +5,11 @@ const select = document.querySelector('select');
 const playBtn = document.querySelector('.play-btn');
 const resetBtn = document.querySelector('.reset-btn');
 // content that will be updated
-let playerScore = parseInt(document.querySelector('.player-score').textContent);
-let computerScore = parseInt(document.querySelector('.computer-score').textContent);
+let playerText = document.querySelector('.player-score');
+let computerText = document.querySelector('.computer-score');
+let playerScore = parseInt(playerText.textContent);
+let computerScore = parseInt(computerText.textContent);
+let header = document.querySelector('h1');
 
 
 let computerChoice = 'rock';
@@ -30,7 +33,7 @@ function getPlayerChoice() {
 function getComputerChoice() {
     var randNum = Math.floor(Math.random() * 3);
     computerChoice = options[randNum];
-    
+
     return computerChoice;
 }
 
@@ -39,45 +42,61 @@ function getComputerChoice() {
 
 function playGame() {
     computerChoice = getComputerChoice();
-    
+    var winner = getResult(computerChoice, playerChoice);
+
     console.log({
         playerChoice,
-        computerChoice
+        computerChoice,
+        winner
     });
     
-    console.log(getWinner(computerChoice, playerChoice));
+    updateScore(winner);
 }
 
-function getWinner(comp, player){
-    var winner = '';
-    
+function getResult(comp, player) {
+    var result = '';
+
     if (player === 'rock') {
         if (comp === 'rock') {
-            winner = 'tie';
+            result = 'tie';
         } else if (comp === 'paper') {
-            winner = 'computer';
+            result = 'computer';
         } else {
-            winner = 'player';
+            result = 'player';
         }
     } else if (player === 'paper') {
         if (comp === 'paper') {
-            winner = 'tie';
+            result = 'tie';
         } else if (comp === 'scissors') {
-            winner = 'computer';
+            result = 'computer';
         } else {
-            winner = 'player';
+            result = 'player';
         }
     } else {
         if (comp === 'scissors') {
-            winner = 'tie';
+            result = 'tie';
         } else if (computer === 'rock') {
-            winner = 'computer';
+            result = 'computer';
         } else {
-            winner = 'player';
+            result = 'player';
         }
     }
-    
-    return winner;
+
+    return result;
+}
+
+function updateScore(winner) {
+    if (winner === 'computer') {
+        computerScore++;
+        computerText.textContent = computerScore;
+        header.textContent = 'Computer Wins';
+    } else if (winner === 'player') {
+        playerScore++;
+        playerText.textContent = playerScore;
+        header.textContent = 'Player Wins!';
+    } else {
+        header.textContent = 'Tie game';
+    }
 }
 
 // TODO: create game(), a function to play 5 rounds and keeps track of the scores
