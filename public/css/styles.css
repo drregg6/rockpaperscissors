@@ -8,40 +8,7 @@
 body {
     font-size: 16px;
     font-family: 'Lato', sans-serif, Helvetica;
-    
-/*
-    display: flex;
-    justify-content: center;
-*/
 }
-
-/*
-section {
-    width: 50%;
-    
-    display: flex;
-    flex-direction: column;
-}
-
-section > div,
-section > select,
-section > button {
-    margin-top: 25px;
-}
-
-.scores {
-    display: flex;
-    justify-content: space-between;
-}
-
-.score-box {
-    width: 40%;
-    border: 5px solid black;
-    
-    text-align: center;
-    font-size: 4em;
-}
-*/
 
 section {
     margin: 0 auto;
@@ -52,6 +19,7 @@ header h1 {
     font-family: 'Lobster', cursive;
     font-weight: normal;
     font-size: 3em;
+    margin: 25px auto;
 }
 
 .player,
@@ -81,6 +49,8 @@ header h1 {
     font-variant: small-caps;
 }
 
+
+
 .select {
     margin-left: auto;
     margin-right: auto;
@@ -96,6 +66,8 @@ select {
 select {
     padding: 8.5px 25px;
 }
+
+
 
 button.reset-btn,
 button.play-btn  {

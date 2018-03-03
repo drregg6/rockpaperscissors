@@ -1,6 +1,7 @@
 var select = document.querySelector('select');
 var playBtn = document.querySelector('.play-btn');
 var resetBtn = document.querySelector('.reset-btn');
+var pEls = document.querySelectorAll('p');
 
 var playerScore = 0;
 var computerScore = 0;
@@ -10,14 +11,13 @@ var options = ['rock', 'paper', 'scissors'];
 
 
 // change player's choice on selection
-select.addEventListener('input', playerChoice);
+//select.addEventListener('input', playerChoice);
 
 // play game on button click
-playBtn.addEventListener('click', playGame);
+//playBtn.addEventListener('click', playGame);
 
 // reset game on button click
-resetBtn.addEventListener('click', resetGame);
-
+//resetBtn.addEventListener('click', resetGame);
 
 
 function getPlayerChoice() {
