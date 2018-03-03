@@ -23,7 +23,7 @@ select.addEventListener('input', getPlayerChoice);
 playBtn.addEventListener('click', playGame);
 
 // reset game on button click
-//resetBtn.addEventListener('click', resetGame);
+resetBtn.addEventListener('click', resetGame);
 
 
 function getPlayerChoice() {
@@ -35,6 +35,14 @@ function getComputerChoice() {
     computerChoice = options[randNum];
 
     return computerChoice;
+}
+
+function resetGame() {
+    header.textContent = 'Rock, Paper, Scissors';
+    playerScore = 0;
+    computerScore = 0;
+    playerText.textContent = '0';
+    computerText.textContent = '0';
 }
 
 // TODO: condense playGame func
