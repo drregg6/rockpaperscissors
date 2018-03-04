@@ -1,9 +1,11 @@
 // content that remains constant
 const options = ['rock', 'paper', 'scissors'];
+
 // content that will get eventlisteners
 const select = document.querySelector('select');
 const playBtn = document.querySelector('.play-btn');
 const resetBtn = document.querySelector('.reset-btn');
+
 // content that will be updated
 let playerText = document.querySelector('.player-score');
 let computerText = document.querySelector('.computer-score');
@@ -11,7 +13,7 @@ let playerScore = parseInt(playerText.textContent);
 let computerScore = parseInt(computerText.textContent);
 let header = document.querySelector('h1');
 
-
+// main variables
 let computerChoice = 'rock';
 let playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
 
@@ -24,6 +26,7 @@ playBtn.addEventListener('click', playGame);
 
 // reset game on button click
 resetBtn.addEventListener('click', resetGame);
+
 
 
 function getPlayerChoice() {
@@ -48,23 +51,14 @@ function resetGame() {
     computerText.textContent = '0';
 }
 
-// TODO: condense playGame func
-// TODO: do something instead of console.logging
+
 
 function playGame() {
     computerChoice = getComputerChoice();
     var winner = getResult(computerChoice, playerChoice);
     
-    if (computerScore === 5) {
-        computerText.textContent = computerScore;
-        header.textContent = 'Computer Wins -- Game Over!';
-        playBtn.disabled = true;
-        playBtn.setAttribute('opacity', '0.1');
-    } else if (playerScore === 5) {
-        playerText.textContent = playerScore;
-        header.textContent = 'You Win! Congratulations!';
-        playBtn.disabled = true;
-        playBtn.setAttribute('opacity', '0.1');
+    if (computerScore === 5 || playerScore === 5) {
+        updateGameOver(winner);
     } else {
         updateScore(winner);
     }
@@ -102,7 +96,7 @@ function getResult(comp, player) {
     } else {
         if (comp === 'scissors') {
             result = 'tie';
-        } else if (computer === 'rock') {
+        } else if (comp === 'rock') {
             computerScore++;
             result = 'computer';
         } else {
@@ -128,4 +122,13 @@ function updateScore(winner) {
     }
 }
 
-// TODO: create game(), a function to play 5 rounds and keeps track of the scores
+function updateGameOver(winner) {
+    if (winner === 'player') {
+        playerText.textContent = playerScore;
+        header.textContent = 'You Win! Congratulations!';
+    } else {
+        computerText.textContent = computerScore;
+        header.textContent = 'Computer Wins -- Game Over!';
+    }
+    playBtn.disabled = true;
+}
