@@ -1,3 +1,5 @@
+// TODO: get the border color to change upon win
+
 // content that remains constant
 const options = ['Rock', 'Paper', 'Scissors'];
 
