@@ -42,7 +42,10 @@ function getComputerChoice() {
 
 function resetGame() {
     playBtn.disabled = false;
-    playBtn.setAttribute('opacity', '1');
+    playBtn.classList.remove('hidden');
+    computerText.classList.remove('computer-wins');
+    playerText.classList.remove('player-wins');
+    header.classList.remove('player-wins', 'computer-wins');
     
     header.textContent = 'Rock, Paper, Scissors';
     playerScore = 0;
@@ -62,12 +65,11 @@ function playGame() {
     } else {
         updateScore(winner);
     }
-
-    console.log({
-        playerChoice,
-        computerChoice,
-        winner
-    });
+//    console.log({
+//        playerChoice,
+//        computerChoice,
+//        winner
+//    });
 }
 
 function getResult(comp, player) {
@@ -112,11 +114,9 @@ function updateScore(winner) {
     if (winner === 'computer') {
         computerText.textContent = computerScore;
         // somehow add 'playerChoice' loses against 'computerChoice'
-        header.textContent = 'Computer Wins';
     } else if (winner === 'player') {
         playerText.textContent = playerScore;
         // somehow add 'playerChoice' beats 'computerChoice'
-        header.textContent = 'Player Wins!';
     } else {
         header.textContent = 'Tie game';
     }
@@ -125,10 +125,15 @@ function updateScore(winner) {
 function updateGameOver(winner) {
     if (winner === 'player') {
         playerText.textContent = playerScore;
-        header.textContent = 'You Win! Congratulations!';
+        playerText.classList.add('player-wins');
+        header.textContent = 'Congratulations! You Win!';
+        header.classList.add('player-wins')
     } else {
         computerText.textContent = computerScore;
-        header.textContent = 'Computer Wins -- Game Over!';
+        computerText.classList.add('computer-wins');
+        header.textContent = 'Game Over... Computer Wins';
+        header.classList.add('computer-wins');
     }
+    playBtn.classList.add('hidden');
     playBtn.disabled = true;
 }

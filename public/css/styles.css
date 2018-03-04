@@ -100,3 +100,17 @@ button.reset-btn:hover {
     color: #f00;
     border: 1px solid #f00;
 }
+
+.player-wins {
+/*    border: 2px solid #0f0;*/
+    color: #0f0;
+}
+.computer-wins {
+    color: #f00;
+/*    border: 2px solid #f00;*/
+}
+
+.hidden {
+    opacity: 0.25;
+    color: #a1a1a1;
+}
