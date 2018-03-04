@@ -1,5 +1,5 @@
 // content that remains constant
-const options = ['rock', 'paper', 'scissors'];
+const options = ['Rock', 'Paper', 'Scissors'];
 
 // content that will get eventlisteners
 const select = document.querySelector('select');
@@ -15,7 +15,7 @@ let header = document.querySelector('h1');
 
 // main variables
 let computerChoice = 'rock';
-let playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
+let playerChoice = select.options[select.selectedIndex].textContent;
 
 
 // change player's choice on selection
@@ -65,43 +65,52 @@ function playGame() {
     } else {
         updateScore(winner);
     }
-//    console.log({
-//        playerChoice,
-//        computerChoice,
-//        winner
-//    });
+    console.log({
+        playerChoice,
+        computerChoice,
+        winner
+    });
 }
 
 function getResult(comp, player) {
     var result = '';
 
-    if (player === 'rock') {
-        if (comp === 'rock') {
+    if (player === 'Rock') {
+        if (comp === 'Rock') {
+            header.textContent = `${player} ties ${comp}`;
             result = 'tie';
-        } else if (comp === 'paper') {
+        } else if (comp === 'Paper') {
+            header.textContent = `${player} loses to ${comp}`;
             computerScore++;
             result = 'computer';
         } else {
+            header.textContent = `${player} beats ${comp}`;
             playerScore++;
             result = 'player';
         }
-    } else if (player === 'paper') {
-        if (comp === 'paper') {
+    } else if (player === 'Paper') {
+        if (comp === 'Paper') {
+            header.textContent = `${player} ties ${comp}`;
             result = 'tie';
-        } else if (comp === 'scissors') {
+        } else if (comp === 'Scissors') {
+            header.textContent = `${player} loses to ${comp}`;
             computerScore++;
             result = 'computer';
         } else {
+            header.textContent = `${player} beats ${comp}`;
             playerScore++;
             result = 'player';
         }
     } else {
-        if (comp === 'scissors') {
+        if (comp === 'Scissors') {
+            header.textContent = `${player} ties ${comp}`;
             result = 'tie';
-        } else if (comp === 'rock') {
+        } else if (comp === 'Rock') {
+            header.textContent = `${player} loses to ${comp}`;
             computerScore++;
             result = 'computer';
         } else {
+            header.textContent = `${player} beats ${comp}`;
             playerScore++;
             result = 'player';
         }
