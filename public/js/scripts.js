@@ -28,7 +28,18 @@ let playerChoice = 'rock';
 
 // change player's choice on selection
 //select.addEventListener('input', getPlayerChoice);
-
+rockBtn.addEventListener('click', function() {
+    playerChoice = 'Rock';
+    header.textContent = 'You\'re playing Rock';
+});
+paperBtn.addEventListener('click', function() {
+    playerChoice = 'Paper';
+    header.textContent = 'You\'re playing Paper';
+});
+scissorsBtn.addEventListener('click', function() {
+    playerChoice = 'Scissors';
+    header.textContent = 'You\'re playing Scissors';
+});
 
 // play game on button click
 playBtn.addEventListener('click', playGame);
@@ -38,9 +49,9 @@ resetBtn.addEventListener('click', resetGame);
 
 
 
-function getPlayerChoice() {
-    playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
-}
+//function getPlayerChoice() {
+//    playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
+//}
 
 function getComputerChoice() {
     var randNum = Math.floor(Math.random() * 3);
