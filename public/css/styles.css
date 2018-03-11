@@ -78,7 +78,7 @@ select {
     outline: none;
     margin-left: 25px;
     
-    background: #00f;
+    background: #0f0;
     color: #fff;
     
     font-weight: 700;
@@ -87,9 +87,9 @@ select {
     transition: all .15s;
 }
 .btn-group > button:hover {
-    color: #00f;
+    color: #0f0;
     background: #fff;
-    border: 1px solid #00f;
+    border: 1px solid #0f0;
 }
 
 button.reset-btn,

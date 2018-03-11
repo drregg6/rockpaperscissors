@@ -9,6 +9,9 @@ const options = ['Rock', 'Paper', 'Scissors'];
 const select = document.querySelector('select');
 const playBtn = document.querySelector('.play-btn');
 const resetBtn = document.querySelector('.reset-btn');
+const rockBtn = document.querySelector('.rock');
+const paperBtn = document.querySelector('.paper');
+const scissorsBtn = document.querySelector('.scissors');
 
 // content that will be updated
 let playerText = document.querySelector('.player-score');
@@ -19,11 +22,13 @@ let header = document.querySelector('h1');
 
 // main variables
 let computerChoice = 'rock';
-let playerChoice = select.options[select.selectedIndex].textContent;
+//let playerChoice = 'select.options[select.selectedIndex].textContent';
+let playerChoice = 'rock';
 
 
 // change player's choice on selection
-select.addEventListener('input', getPlayerChoice);
+//select.addEventListener('input', getPlayerChoice);
+
 
 // play game on button click
 playBtn.addEventListener('click', playGame);
