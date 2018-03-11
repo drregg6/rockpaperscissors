@@ -58,15 +58,10 @@ header h1 {
     margin-right: auto;
 }
 
-button,
-select {
+button {
     margin: 0 auto;
     text-align: center;
     border-radius: 2.5px;
-}
-
-select {
-    padding: 8.5px 25px;
 }
 
 .btn-group {
