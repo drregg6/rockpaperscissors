@@ -1,6 +1,4 @@
 // TODO: get the border color to change upon win
-// TODO: change the select to three more buttons
-//              it makes user selection much easier
 
 // content that remains constant
 const options = ['Rock', 'Paper', 'Scissors'];
@@ -22,12 +20,12 @@ let header = document.querySelector('h1');
 
 // main variables
 let computerChoice = 'rock';
-//let playerChoice = 'select.options[select.selectedIndex].textContent';
 let playerChoice = 'rock';
 
 
+// TODO: buttons could be condensed to one forEach func
+//              with THIS keyword used for selection
 // change player's choice on selection
-//select.addEventListener('input', getPlayerChoice);
 rockBtn.addEventListener('click', function() {
     playerChoice = 'Rock';
     header.textContent = 'You\'re playing Rock';
@@ -48,10 +46,6 @@ playBtn.addEventListener('click', playGame);
 resetBtn.addEventListener('click', resetGame);
 
 
-
-//function getPlayerChoice() {
-//    playerChoice = select.options[select.selectedIndex].textContent.toLowerCase();
-//}
 
 function getComputerChoice() {
     var randNum = Math.floor(Math.random() * 3);
@@ -142,10 +136,8 @@ function getResult(comp, player) {
 function updateScore(winner) {
     if (winner === 'computer') {
         computerText.textContent = computerScore;
-        // somehow add 'playerChoice' loses against 'computerChoice'
     } else if (winner === 'player') {
         playerText.textContent = playerScore;
-        // somehow add 'playerChoice' beats 'computerChoice'
     } else {
         header.textContent = 'Tie game';
     }
