@@ -1,4 +1,6 @@
 // TODO: get the border color to change upon win
+// TODO: change the select to three more buttons
+//              it makes user selection much easier
 
 // content that remains constant
 const options = ['Rock', 'Paper', 'Scissors'];

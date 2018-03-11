@@ -69,10 +69,31 @@ select {
     padding: 8.5px 25px;
 }
 
+.btn-group {
+    margin: 25px auto;
+}
 
+.btn-group > button {
+    border: 1px solid #fff;
+    outline: none;
+    margin-left: 25px;
+    
+    background: #00f;
+    color: #fff;
+    
+    font-weight: 700;
+    padding: 5px 30px;
+    
+    transition: all .15s;
+}
+.btn-group > button:hover {
+    color: #00f;
+    background: #fff;
+    border: 1px solid #00f;
+}
 
 button.reset-btn,
-button.play-btn  {
+button.play-btn {
     outline: none;
     border: 1px solid #fff;
     color: #fff;
